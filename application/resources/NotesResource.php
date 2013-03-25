@@ -1,5 +1,11 @@
 <?php
 
+
+//get Collection
+//get Element
+
+
+//localhost/notes/1
 class NotesResource
 //extends \RESTWork\Resource
 {
@@ -10,32 +16,15 @@ class NotesResource
     }
 
 
-    public function get() {
-
-    }
-
-    public function put()
+    public function getCollection()
     {
 
     }
 
-    public function detele() {
+    public function getElement($id, $fields)
+    {
+        //$fields = \RESTWork\Request::getField();
 
     }
 
-    public function options() {
-
-    }
-
-    public function patch() {
-
-    }
-
-    public function post() {
-
-    }
-
-    public function trace() {
-
-    }
 }
