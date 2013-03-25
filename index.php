@@ -14,4 +14,3 @@ define('SYSTEM', BASE . 'restwork' . DS);
 
 require_once SYSTEM.'application.php';
 \RESTWork\Application::run();
-
