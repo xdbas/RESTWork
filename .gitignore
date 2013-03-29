@@ -6,10 +6,30 @@
 *.rej
 *.swo
 *.swp
-*.zip
 *.vi
 *~
 *.sass-cache
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.log
+*.sql
+*.sqlite
+
+composer.phar
+composer.lock
+
 
 # OS or Editor folders
 .DS_Store
@@ -24,6 +44,10 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 sftp-config.json
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
 
 # Komodo
 *.komodoproject
@@ -34,4 +58,6 @@ sftp-config.json
 .svn
 .CVS
 .idea
+/.idea
+/vendor
 node_modules
