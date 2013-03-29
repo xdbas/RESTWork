@@ -19,5 +19,18 @@ class RESTWorkTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('C:\\Apache24\\htdocs\\simplewebservice\\restwork\\', SYSTEM_PATH);
     }
 
+    public function testApplicationMethodsExist()
+    {
+        require_once SYSTEM_PATH.'application.php';
+
+        $this->assertTrue(method_exists(new \RESTWork\Application, 'Run'), 'Method does not exists');
+        $this->assertTrue(method_exists(new \RESTWork\Application, 'initErrorHandlers'), 'Method does not exists');
+    }
+
+    public function testApplicationInitialization()
+    {
+        \RESTWork\Application::run();
+        $this->expectOutputString('END App');
+    }
 
 }

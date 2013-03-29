@@ -1,6 +1,6 @@
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="test\bootstrap.php"
+         bootstrap="tests\bootstrap.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -9,7 +9,7 @@
          stopOnFailure="false"
          syntaxCheck="false">
     <testsuite name="RESTWork Test Suite">
-        <directory suffix=".php">test\</directory>
+        <directory suffix=".php">tests\</directory>
     </testsuite>
     <!-- <logging>
         <log type="coverage-html" target="tests/report.html" charset="UTF-8"
