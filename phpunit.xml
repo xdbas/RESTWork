@@ -12,9 +12,9 @@
         <directory suffix=".php">test\</directory>
     </testsuite>
     <!-- <logging>
-        <log type="coverage-html" target="test/report.html" charset="UTF-8"
+        <log type="coverage-html" target="tests/report.html" charset="UTF-8"
             yui="true" highlight="true"
             lowUpperBound="50" highLowerBound="80"/>
-        <log type="testdox-html" target="test\testdox.html" />
+        <log type="testdox-html" target="tests\testdox.html" />
     </logging> -->
 </phpunit>
