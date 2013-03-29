@@ -1,6 +1,6 @@
 <?php
 //c:\etc\phpunit\phpunit.bat
-session_start();
+//session_start();
 error_reporting(-1);
 
 if (defined('DS') === false) {
