@@ -1,0 +1,19 @@
+{
+    "name": "RESTWork/RESTWork",
+    "description": "PHP RESTFull webservice",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Bas van Manen",
+            "email": "bas@getbwork.com",
+            "homepage": "http://www.getbwork.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "support": {
+        "issues": "https://github.com/xdbas/RESTWork/issues"
+    }
+}
