@@ -40,12 +40,16 @@ class Application
     {
         //Replace to bootstrap file with hooks
         require_once SYSTEM_PATH . 'SingletonTrait.php';
+        require_once SYSTEM_PATH . 'Uri.php';
 
         require_once SYSTEM_PATH . 'Http' . DS. 'Request.php';
         $request = Http\Request::getInstance();
+        $request->getURI();
 
         require_once SYSTEM_PATH . 'Http' . DS. 'Response.php';
         $response = Http\Response::getInstance();
+        $response->setBody('END App');
+        $response->outPutStatus();
 
         return new \stdClass;
     }
@@ -65,8 +69,6 @@ class Application
         }
 
         static::dispatch(static::bootstrap());
-
-        echo 'END App';
     }
 
 }
