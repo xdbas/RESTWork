@@ -15,7 +15,7 @@ class Application
      * @access public
      * @return void
      */
-    public static function initErrorHandlers()
+    private static function initErrorHandlers()
     {
         set_exception_handler(function($e)
         {
@@ -36,6 +36,25 @@ class Application
         });
     }
 
+    private static function bootstrap()
+    {
+        //Replace to bootstrap file with hooks
+        require_once SYSTEM_PATH . 'SingletonTrait.php';
+
+        require_once SYSTEM_PATH . 'Http' . DS. 'Request.php';
+        $request = Http\Request::getInstance();
+
+        require_once SYSTEM_PATH . 'Http' . DS. 'Response.php';
+        $response = Http\Response::getInstance();
+
+        return new \stdClass;
+    }
+
+    public static function dispatch(\stdClass $bootstrap)
+    {
+        //Add logic
+    }
+
     public static function run()
     {
         static::initErrorHandlers();
@@ -45,7 +64,8 @@ class Application
             throw new \RuntimeException ('APPLICATION_PATH And LIBRARY_PATH has to be defined for a stable run.');
         }
 
-//        require_once APPLICATION_PATH . 'resources'.DS.'NotesResource.php';
+        static::dispatch(static::bootstrap());
+
         echo 'END App';
     }
 

@@ -3,7 +3,7 @@ trait SingletonTrait
 {
     private static $instance;
 
-    final public function getInstance()
+    final public static function getInstance()
     {
         return static::$instance instanceof self
             ? static::$instance
