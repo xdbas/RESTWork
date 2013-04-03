@@ -2,15 +2,15 @@
 namespace RESTWork;
 
 /**
- * SplClassLoader implementation that implements the technical interoperability
+ * Autoloader implementation that implements the technical interoperability
  * standards for PHP 5.3 namespaces and class names.
  *
- * http://groups.google.com/group/php-standards/web/final-proposal
- *
- * // Example which loads classes for the Doctrine Common package in the
- * // Doctrine\Common namespace.
- * $classLoader = new SplClassLoader('Doctrine\Common', '/path/to/doctrine');
+ * Example which loads classes for the Doctrine Common package in the
+ * Doctrine\Common namespace.
+ * <code>
+ * $classLoader = new SplClassLoader('Doctrine\\Common', '/path/to/doctrine');
  * $classLoader->register();
+ * </code>
  *
  * @author Jonathan H. Wage <jonwage@gmail.com>
  * @author Roman S. Borschel <roman@code-factory.org>
@@ -22,15 +22,27 @@ namespace RESTWork;
 class Autoloader
 {
     /**
-     * @var string
+     * @var string $fileExtension
      */
     private $fileExtension = '.php';
+
+    /**
+     * @var string $namespace
+     */
     private $namespace;
+
+    /**
+     * @var string $includePath
+     */
     private $includePath;
+
+    /**
+     * @var string $namespaceSeparator
+     */
     private $namespaceSeparator = '\\';
 
     /**
-     * Creates a new <tt>SplClassLoader</tt> that loads classes of the
+     * Creates a new <tt>Autoloader</tt> that loads classes of the
      * specified namespace.
      *
      * @param null $namespace
@@ -40,7 +52,7 @@ class Autoloader
     public function __construct($namespace = null, $includePath = null)
     {
         $this->namespace   = $namespace;
-        $this->includePath = $includePath;
+        $this->includePath = rtrim($includePath, '\\');
     }
 
     /**
@@ -137,7 +149,7 @@ class Autoloader
                 $className = substr($className, $lastNsPos + 1);
                 $fileName = str_replace($this->namespaceSeparator, DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
             }
-            $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . $this->fileExtension;
+            $fileName .= $className . $this->fileExtension;
 
             require ($this->includePath !== null ? $this->includePath . DIRECTORY_SEPARATOR : '') . $fileName;
         }

@@ -49,15 +49,14 @@ class Application
      */
     private static function bootstrap()
     {
-        $request = new Http\Request;
 
-        return new \stdClass;
+        return new Bootstrap\Bootstrap;
     }
 
     /**
-     * @param \stdClass $bootstrap
+     * @param \RESTWork\Bootstrap\AbstractBootstrap $bootstrap
      */
-    public static function dispatch(\stdClass $bootstrap)
+    public static function dispatch(Bootstrap\AbstractBootstrap $bootstrap)
     {
         //Add logic
     }
