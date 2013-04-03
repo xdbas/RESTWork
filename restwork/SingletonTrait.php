@@ -1,4 +1,6 @@
-<?php namespace RESTWork;
+<?php
+namespace RESTWork;
+
 trait SingletonTrait
 {
     private static $instance;

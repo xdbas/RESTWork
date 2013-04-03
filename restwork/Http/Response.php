@@ -1,8 +1,8 @@
-<?php namespace RESTWork\Http; defined('DS') or die('No direct script access');
-
-require_once 'ResponseStatus.php';
+<?php
+namespace RESTWork\Http;
 
 use RESTWork\SingletonTrait;
+
 class Response
 {
     use SingletonTrait;

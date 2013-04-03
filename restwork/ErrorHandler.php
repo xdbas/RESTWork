@@ -1,4 +1,5 @@
-<?php namespace RESTWork;
+<?php
+namespace RESTWork;
 
 class ErrorHandler
 {

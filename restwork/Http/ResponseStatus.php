@@ -1,5 +1,5 @@
-<?php namespace RESTWork\Http; defined('DS') or die('No direct script access');
-
+<?php
+namespace RESTWork\Http;
 
 class ResponseStatus
 {

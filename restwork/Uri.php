@@ -1,15 +1,18 @@
-<?php namespace RESTWork; defined('DS') or die('No direct script access');
+<?php
+namespace RESTWork;
+
+use RESTWork\Http\Request;
 
 class Uri
 {
 
-    private $_uri;
+    private static $_uri;
 
-    private $_segments;
+    private static $_segments;
 
-    public function __construct()
+    public static function initialize(Request $request)
     {
-
+        $uri = $request->getURI();
     }
 
     public function create($url, $ssl, $absolute)

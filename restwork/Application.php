@@ -1,11 +1,18 @@
-<?php namespace RESTWork;
+<?php
+namespace RESTWork;
 
 class Application
 {
 
+    /**
+     * This method will load and register a new autoloader for the system
+     * multiple autoloader instances may be used.
+     */
     public static function registerAutoloaders()
     {
-
+        require_once 'Autoloader.php';
+        $autoloader = new Autoloader(__NAMESPACE__, BASE);
+        $autoloader->register();
     }
 
     /**
@@ -36,32 +43,33 @@ class Application
         });
     }
 
+    /**
+     * This method will initialize the bootstrap and run all its functions
+     * @return \stdClass
+     */
     private static function bootstrap()
     {
-        //Replace to bootstrap file with hooks
-        require_once SYSTEM_PATH . 'SingletonTrait.php';
-        require_once SYSTEM_PATH . 'Uri.php';
-
-        require_once SYSTEM_PATH . 'Http' . DS. 'Request.php';
-        $request = Http\Request::getInstance();
-        $request->getURI();
-
-        require_once SYSTEM_PATH . 'Http' . DS. 'Response.php';
-        $response = Http\Response::getInstance();
-        $response->setBody('END App');
-        $response->outPutStatus();
+        $request = new Http\Request;
 
         return new \stdClass;
     }
 
+    /**
+     * @param \stdClass $bootstrap
+     */
     public static function dispatch(\stdClass $bootstrap)
     {
         //Add logic
     }
 
+    /**
+     * This is the main method of this class, it is used to run an application.
+     * @throws \RuntimeException
+     */
     public static function run()
     {
         static::initErrorHandlers();
+        static::registerAutoloaders();
 
         if(defined('APPLICATION_PATH') === false
             || defined('SYSTEM_PATH') === false) {
