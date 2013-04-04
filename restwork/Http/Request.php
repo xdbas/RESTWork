@@ -1,7 +1,7 @@
 <?php namespace RESTWork\Http; defined('DS') or die('No direct script access');
 
-use RESTWork\Uri;
-use RESTWork\SingletonTrait;
+use RESTWork\Helpers;
+
 class Request
 {
     private $headers = [];
@@ -13,8 +13,10 @@ class Request
 
     public function headers()
     {
+        $_SERVER = Helpers::htmlentitiesArray($_SERVER, true);
+
         foreach($_SERVER as $key => $value) {
-            $this->headers[htmlspecialchars($key, ENT_QUOTES, 'UTF-8')] = $value;
+            $this->headers[$key] = $value;
         }
     }
 

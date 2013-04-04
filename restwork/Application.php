@@ -45,11 +45,10 @@ class Application
 
     /**
      * This method will initialize the bootstrap and run all its functions
-     * @return \stdClass
+     * @return \RESTWork\Bootstrap\AbstractBootstrap
      */
     private static function bootstrap()
     {
-
         return new Bootstrap\Bootstrap;
     }
 
@@ -67,13 +66,14 @@ class Application
      */
     public static function run()
     {
-        static::initErrorHandlers();
-        static::registerAutoloaders();
-
         if(defined('APPLICATION_PATH') === false
-            || defined('SYSTEM_PATH') === false) {
+            || defined('SYSTEM_PATH') === false
+            || defined('BASE') === false){
             throw new \RuntimeException ('APPLICATION_PATH And LIBRARY_PATH has to be defined for a stable run.');
         }
+
+        static::initErrorHandlers();
+        static::registerAutoloaders();
 
         static::dispatch(static::bootstrap());
     }
