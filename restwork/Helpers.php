@@ -5,7 +5,7 @@ class Helpers
 {
     private static $encoding = 'UTF-8';
 
-    public static function arrayMapRecursive($callback, array $array, $onKeys = false)
+    public static function arrayMapRecursive(callable $callback, array $array, $onKeys = false)
     {
         $temp = [];
         foreach($array as $key => $value) {

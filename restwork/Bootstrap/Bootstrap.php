@@ -10,6 +10,8 @@ class Bootstrap extends AbstractBootstrap
     public function _initConfig()
     {
         Config::loadFile(APPLICATION_PATH.'config'.DS.'Application.php');
+
+        date_default_timezone_set(Config::get('timezone'));
     }
 
     public function _initBeforeHttpRequest(){}
