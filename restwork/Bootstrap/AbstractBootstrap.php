@@ -14,12 +14,12 @@ abstract class AbstractBootstrap
     {
         $methods = get_class_methods($this);
 
-        foreach($methods as $key => $value) {
-            if(substr(strtolower($value), 0, 5) == '_init') {
+        foreach ($methods as $key => $value) {
+            if (substr(strtolower($value), 0, 5) == '_init') {
                 $methodReflection = new \ReflectionMethod($this, $value);
                 $returnData = $methodReflection->invoke($this);
 
-                if($returnData !== null) {
+                if ($returnData !== null) {
                     $this->addInstance($returnData);
                 }
             }
@@ -28,7 +28,7 @@ abstract class AbstractBootstrap
 
     final protected function addInstance($instance)
     {
-        if(array_key_exists(($className = get_class($instance)), static::$instances)) {
+        if (array_key_exists(($className = get_class($instance)), static::$instances)) {
             throw new \Exception(sprintf('The instance of class [%s] was already added.', $className));
         }
 

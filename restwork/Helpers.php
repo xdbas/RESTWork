@@ -8,7 +8,7 @@ class Helpers
     public static function arrayMapRecursive(callable $callback, array $array, $onKeys = false)
     {
         $temp = [];
-        foreach($array as $key => $value) {
+        foreach ($array as $key => $value) {
             $temp[($onKeys
                     ? call_user_func($callback, $key)
                     : $key)] = (is_array($value)
@@ -41,7 +41,7 @@ class Helpers
 
     public static function fileExists($file)
     {
-        if($file == ''
+        if ($file == ''
             || is_string($file) === false) {
             return false;
         }

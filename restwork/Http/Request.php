@@ -15,7 +15,7 @@ class Request
     {
         $_SERVER = Helpers::htmlentitiesArray($_SERVER, true);
 
-        foreach($_SERVER as $key => $value) {
+        foreach ($_SERVER as $key => $value) {
             $this->headers[$key] = $value;
         }
     }

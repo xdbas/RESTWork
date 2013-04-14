@@ -108,10 +108,9 @@ class Response
      */
     public function setStatus($httpStatusCode, $httpStatusMessage = null)
     {
-        if(array_key_exists($httpStatusCode, $this->response)) {
+        if (array_key_exists($httpStatusCode, $this->response)) {
             $httpStatusMessage = $this->response[$httpStatusCode];
-        }
-        else if($httpStatusMessage === null) {
+        } else if ($httpStatusMessage === null) {
             throw new \InvalidArgumentException(sprintf('Code not found, please define a description for [%s]', $httpStatusCode));
         }
 
@@ -129,7 +128,7 @@ class Response
      */
     public function outputStatus()
     {
-        if($this->responseStatus instanceof ResponseStatus) {
+        if ($this->responseStatus instanceof ResponseStatus) {
             header(sprintf('HTTP/1.1 %d %s', $this->responseStatus->httpStatusCode, $this->responseStatus->httpStatusMessage));
         }
         echo $this->body;

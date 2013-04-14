@@ -14,10 +14,13 @@ class Bootstrap extends AbstractBootstrap
         date_default_timezone_set(Config::get('timezone'));
     }
 
-    public function _initBeforeHttpRequest(){}
+    public function _initBeforeHttpRequest()
+    {
+
+    }
 
     public function _initHttpRequest()
     {
-        return  new Http\Request;
+        return new Http\Request;
     }
 }

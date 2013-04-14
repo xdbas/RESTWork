@@ -24,7 +24,9 @@ class ErrorHandler
 
     public static function handleNormalError($code, $error, $file, $line)
     {
-        if(error_reporting() == 0) return;
+        if (error_reporting() == 0) {
+            return;
+        }
 
         static::handleException(new \ErrorException($error, $code, 0, $file, $line));
     }
@@ -33,7 +35,7 @@ class ErrorHandler
     {
         $error = error_get_last();
 
-        if($error !== null) {
+        if ($error !== null) {
             extract($error, EXTR_SKIP);
             static::handleException(new \ErrorException($message, $type, 0, $file, $line));
         }

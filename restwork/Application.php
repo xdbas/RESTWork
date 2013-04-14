@@ -66,10 +66,10 @@ class Application
      */
     public static function run()
     {
-        if(defined('APPLICATION_PATH') === false
+        if (defined('APPLICATION_PATH') === false
             || defined('SYSTEM_PATH') === false
-            || defined('BASE') === false){
-            throw new \RuntimeException ('APPLICATION_PATH And LIBRARY_PATH has to be defined for a stable run.');
+            || defined('BASE') === false) {
+            throw new \RuntimeException('APPLICATION_PATH And LIBRARY_PATH has to be defined for a stable run.');
         }
 
         static::initErrorHandlers();

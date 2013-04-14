@@ -78,15 +78,15 @@ class Config
      */
     public static function loadFile($file)
     {
-        if(Helpers::fileExists($file) === false) {
+        if (Helpers::fileExists($file) === false) {
             throw new \InvalidArgumentException(sprintf('File [%s] is not found or readable.', $file));
         }
 
-        if(strtolower(pathinfo($file)['extension']) == 'php') {
+        if (strtolower(pathinfo($file)['extension']) == 'php') {
 
             $data = require_once $file;
 
-            if(is_array($data) == false
+            if (is_array($data) == false
                 && $data instanceof \Travsersable == false) {
                 throw new \Exception('Supplied file for loading should return an array.');
             }
