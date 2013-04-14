@@ -10,9 +10,21 @@ class Application
      */
     public static function registerAutoloaders()
     {
+
         require_once 'Autoloader.php';
         $autoloader = new Autoloader(__NAMESPACE__, BASE);
         $autoloader->register();
+
+
+        /**
+         * Override Basic error handling with Whoops
+         */
+        $whoopsload = new Autoloader('Whoops', BASE . 'vendor'.DS.'filp'.DS.'whoops'.DS.'src'.DS.'');
+        $whoopsload->register();
+
+        $wh = new \Whoops\Run;
+        $wh->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+        $wh->register();
     }
 
     /**

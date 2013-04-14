@@ -9,7 +9,7 @@
          stopOnFailure="false"
          syntaxCheck="false">
     <testsuite name="RESTWork Test Suite">
-        <directory suffix=".php">tests\</directory>
+        <directory suffix=".php">tests/</directory>
     </testsuite>
     <!-- <logging>
         <log type="coverage-html" target="tests/report.html" charset="UTF-8"
