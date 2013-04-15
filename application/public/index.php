@@ -11,7 +11,7 @@ chdir(__DIR__);
 define('PUBLIC_PATH', realpath('.').DS);
 define('BASE', realpath('..'.DS.'..').DS);
 define('APPLICATION_PATH', BASE . 'application' . DS);
-define('SYSTEM_PATH', BASE . 'restwork' . DS);
+define('SYSTEM_PATH', BASE . 'RESTWork' . DS);
 
 require_once SYSTEM_PATH.'application.php';
 \RESTWork\Application::run();
