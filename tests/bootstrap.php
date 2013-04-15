@@ -12,8 +12,8 @@ chdir(__DIR__);
 define('BASE', realpath('..').DS);
 define('APPLICATION_PATH', BASE . 'application' . DS);
 define('PUBLIC_PATH', APPLICATION_PATH . 'public'. DS);
-define('SYSTEM_PATH', BASE . 'restwork' . DS);
+define('SYSTEM_PATH', BASE . 'RESTWork' . DS);
 
-require_once realpath('..').DS.'restwork'.DS. 'Autoloader.php';
+require_once realpath('..').DS.'RESTWork'.DS. 'Autoloader.php';
 $autoloader = new \RESTWork\Autoloader('RESTWork', BASE);
 $autoloader->register();
