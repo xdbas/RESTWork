@@ -52,7 +52,7 @@ class Autoloader
     public function __construct($namespace = null, $includePath = null)
     {
         $this->namespace   = $namespace;
-        $this->includePath = rtrim($includePath, '\\');
+        $this->includePath = rtrim($includePath, DIRECTORY_SEPARATOR);
     }
 
     /**

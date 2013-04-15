@@ -4,6 +4,8 @@ RESTWork
 Simple REST system to build small webservices without a huge framework or system for easy development.
 
 
+[![Build Status](https://travis-ci.org/xdbas/RESTWork.png?branch=master)](https://travis-ci.org/xdbas/RESTWork)
+
 SYSTEM
 ========
 
